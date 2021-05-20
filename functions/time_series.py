@@ -22,7 +22,7 @@ def time_filter(X):
 def area_square(lat,lat_res=0.5,long_res=0.5,a=6.378e6):
     ''' gives the area in km^2 of a square of length lat_res degree located at latitude lat'''
     radius=a*np.cos(lat*np.pi/180) # radius of the parallel supporting the square
-    area=np.pi**2*a*radius/(4*90)**2 # area of a square of length 1°
+    area=np.pi**2*a*radius/180**2 # area of a square of length 1°
     return area*lat_res*long_res/1e6
 
 
